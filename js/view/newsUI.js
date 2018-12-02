@@ -13,6 +13,10 @@ class NewsUI {
         this._container.innerHTML = "";
     }
 
+    showEmptyMsg() {
+        this._container.insertAdjacentHTML("afterbegin", this._emtyContainerTemplate());
+    }
+
     _newsTemplate({urlToImage, url, title, description}) {
         return `
         <div class="col s12 l6"> 
@@ -30,6 +34,10 @@ class NewsUI {
             </div>
         </div>
         `;
+    }
+
+    _emtyContainerTemplate() {
+        return `<div class="alert-info">Нет новостей.</div>`
     }
 }
 
